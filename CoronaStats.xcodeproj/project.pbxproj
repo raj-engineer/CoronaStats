@@ -9,13 +9,39 @@
 /* Begin PBXBuildFile section */
 		3E957429293B543D00786A43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957428293B543D00786A43 /* AppDelegate.swift */; };
 		3E95742B293B543D00786A43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E95742A293B543D00786A43 /* SceneDelegate.swift */; };
-		3E95742D293B543D00786A43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E95742C293B543D00786A43 /* ViewController.swift */; };
+		3E95742D293B543D00786A43 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E95742C293B543D00786A43 /* CountriesViewController.swift */; };
 		3E957430293B543D00786A43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E95742E293B543D00786A43 /* Main.storyboard */; };
 		3E957432293B543E00786A43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E957431293B543E00786A43 /* Assets.xcassets */; };
 		3E957435293B543E00786A43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E957433293B543E00786A43 /* LaunchScreen.storyboard */; };
-		3E957440293B543E00786A43 /* CoronaStatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E95743F293B543E00786A43 /* CoronaStatsTests.swift */; };
 		3E95744A293B543E00786A43 /* CoronaStatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957449293B543E00786A43 /* CoronaStatsUITests.swift */; };
 		3E95744C293B543E00786A43 /* CoronaStatsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E95744B293B543E00786A43 /* CoronaStatsUITestsLaunchTests.swift */; };
+		3E95745A293B548400786A43 /* CountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957459293B548400786A43 /* CountriesViewModel.swift */; };
+		3E957460293B579A00786A43 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E95745F293B579900786A43 /* Service.swift */; };
+		3E957462293B587500786A43 /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957461293B587500786A43 /* CountriesService.swift */; };
+		3E957465293B5C9C00786A43 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957464293B5C9C00786A43 /* Countries.swift */; };
+		3E957467293B5FFB00786A43 /* CountriesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957466293B5FFB00786A43 /* CountriesViewModelProtocol.swift */; };
+		3E957469293B603800786A43 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957468293B603800786A43 /* Dynamic.swift */; };
+		3E957472293B71AB00786A43 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957470293B71AB00786A43 /* CountryCell.swift */; };
+		3E957473293B71AB00786A43 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E957471293B71AB00786A43 /* CountryCell.xib */; };
+		3E957476293B7E3900786A43 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957475293B7E3900786A43 /* Constants.swift */; };
+		3E957479293B89A200786A43 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957478293B89A200786A43 /* UITableView+Extension.swift */; };
+		3E95747C293C7F8300786A43 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E95747B293C7F8300786A43 /* DetailViewController.swift */; };
+		3E957481293C871800786A43 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957480293C871800786A43 /* DetailViewModel.swift */; };
+		3E957483293C874A00786A43 /* DetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957482293C874A00786A43 /* DetailViewModelProtocol.swift */; };
+		3E957485293C885500786A43 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957484293C885500786A43 /* Detail.swift */; };
+		3E957487293C889300786A43 /* DetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957486293C889300786A43 /* DetailService.swift */; };
+		3E957489293DB51A00786A43 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957488293DB51A00786A43 /* UIColor+Extensions.swift */; };
+		3E95748B293DCAE800786A43 /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E95748A293DCAE800786A43 /* DetailViewModelTests.swift */; };
+		3E95748D293DD35500786A43 /* MockDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E95748C293DD35500786A43 /* MockDetailService.swift */; };
+		3E957497293E0A0300786A43 /* CountriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957496293E0A0300786A43 /* CountriesViewModelTests.swift */; };
+		3E957499293E0DD000786A43 /* MockCountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957498293E0DD000786A43 /* MockCountriesService.swift */; };
+		3E95749F293F603B00786A43 /* Screenshot 2022-12-06 at 4.58.38 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E95749D293F603B00786A43 /* Screenshot 2022-12-06 at 4.58.38 PM.png */; };
+		3E9574A0293F603B00786A43 /* Screenshot 2022-12-06 at 4.58.53 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E95749E293F603B00786A43 /* Screenshot 2022-12-06 at 4.58.53 PM.png */; };
+		3E9574A3293F611800786A43 /* Simulator Screen Shot - iPhone SE (3rd generation) - 2022-12-06 at 17.00.15.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9574A1293F611800786A43 /* Simulator Screen Shot - iPhone SE (3rd generation) - 2022-12-06 at 17.00.15.png */; };
+		3E9574A4293F611800786A43 /* Simulator Screen Shot - iPhone SE (3rd generation) - 2022-12-06 at 16.59.58.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9574A2293F611800786A43 /* Simulator Screen Shot - iPhone SE (3rd generation) - 2022-12-06 at 16.59.58.png */; };
+		3E9574AA293F97B700786A43 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9574A9293F97B700786A43 /* Loader.swift */; };
+		3E9574B0293FA98A00786A43 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9574AF293FA98A00786A43 /* ErrorView.swift */; };
+		3E9574B229406AC100786A43 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E9574B129406AC100786A43 /* ErrorView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,16 +65,42 @@
 		3E957425293B543D00786A43 /* CoronaStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoronaStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E957428293B543D00786A43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E95742A293B543D00786A43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3E95742C293B543D00786A43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3E95742C293B543D00786A43 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		3E95742F293B543D00786A43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E957431293B543E00786A43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E957434293B543E00786A43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E957436293B543E00786A43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E95743B293B543E00786A43 /* CoronaStatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoronaStatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E95743F293B543E00786A43 /* CoronaStatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaStatsTests.swift; sourceTree = "<group>"; };
 		3E957445293B543E00786A43 /* CoronaStatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoronaStatsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E957449293B543E00786A43 /* CoronaStatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaStatsUITests.swift; sourceTree = "<group>"; };
 		3E95744B293B543E00786A43 /* CoronaStatsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaStatsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3E957459293B548400786A43 /* CountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModel.swift; sourceTree = "<group>"; };
+		3E95745F293B579900786A43 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		3E957461293B587500786A43 /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
+		3E957464293B5C9C00786A43 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		3E957466293B5FFB00786A43 /* CountriesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModelProtocol.swift; sourceTree = "<group>"; };
+		3E957468293B603800786A43 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		3E957470293B71AB00786A43 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		3E957471293B71AB00786A43 /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
+		3E957475293B7E3900786A43 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3E957478293B89A200786A43 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		3E95747B293C7F8300786A43 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3E957480293C871800786A43 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		3E957482293C874A00786A43 /* DetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelProtocol.swift; sourceTree = "<group>"; };
+		3E957484293C885500786A43 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		3E957486293C889300786A43 /* DetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailService.swift; sourceTree = "<group>"; };
+		3E957488293DB51A00786A43 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		3E95748A293DCAE800786A43 /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
+		3E95748C293DD35500786A43 /* MockDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailService.swift; sourceTree = "<group>"; };
+		3E957496293E0A0300786A43 /* CountriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModelTests.swift; sourceTree = "<group>"; };
+		3E957498293E0DD000786A43 /* MockCountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCountriesService.swift; sourceTree = "<group>"; };
+		3E95749D293F603B00786A43 /* Screenshot 2022-12-06 at 4.58.38 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2022-12-06 at 4.58.38 PM.png"; sourceTree = "<group>"; };
+		3E95749E293F603B00786A43 /* Screenshot 2022-12-06 at 4.58.53 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2022-12-06 at 4.58.53 PM.png"; sourceTree = "<group>"; };
+		3E9574A1293F611800786A43 /* Simulator Screen Shot - iPhone SE (3rd generation) - 2022-12-06 at 17.00.15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone SE (3rd generation) - 2022-12-06 at 17.00.15.png"; sourceTree = "<group>"; };
+		3E9574A2293F611800786A43 /* Simulator Screen Shot - iPhone SE (3rd generation) - 2022-12-06 at 16.59.58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone SE (3rd generation) - 2022-12-06 at 16.59.58.png"; sourceTree = "<group>"; };
+		3E9574A9293F97B700786A43 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		3E9574AF293FA98A00786A43 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		3E9574B129406AC100786A43 /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +151,19 @@
 		3E957427293B543D00786A43 /* CoronaStats */ = {
 			isa = PBXGroup;
 			children = (
+				3E95749C293F5F7400786A43 /* ScreenShots */,
+				3E95747F293C806000786A43 /* Constants */,
+				3E95747E293C800500786A43 /* Resources */,
+				3E95747D293C7FEA00786A43 /* StoryBoard */,
+				3E957463293B5C7D00786A43 /* Models */,
+				3E95747A293C7F6300786A43 /* Views */,
+				3E95749A293E204D00786A43 /* ViewControllers */,
+				3E957458293B546900786A43 /* ViewModel */,
+				3E957477293B898200786A43 /* Extensions */,
+				3E957474293B7E2100786A43 /* Helper */,
+				3E95745B293B54C500786A43 /* Service */,
 				3E957428293B543D00786A43 /* AppDelegate.swift */,
 				3E95742A293B543D00786A43 /* SceneDelegate.swift */,
-				3E95742C293B543D00786A43 /* ViewController.swift */,
-				3E95742E293B543D00786A43 /* Main.storyboard */,
-				3E957431293B543E00786A43 /* Assets.xcassets */,
-				3E957433293B543E00786A43 /* LaunchScreen.storyboard */,
 				3E957436293B543E00786A43 /* Info.plist */,
 			);
 			path = CoronaStats;
@@ -113,7 +172,8 @@
 		3E95743E293B543E00786A43 /* CoronaStatsTests */ = {
 			isa = PBXGroup;
 			children = (
-				3E95743F293B543E00786A43 /* CoronaStatsTests.swift */,
+				3E95749B293E20BF00786A43 /* ViewModelTests */,
+				3E95748E293DD74000786A43 /* Mock */,
 			);
 			path = CoronaStatsTests;
 			sourceTree = "<group>";
@@ -125,6 +185,128 @@
 				3E95744B293B543E00786A43 /* CoronaStatsUITestsLaunchTests.swift */,
 			);
 			path = CoronaStatsUITests;
+			sourceTree = "<group>";
+		};
+		3E957458293B546900786A43 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3E957459293B548400786A43 /* CountriesViewModel.swift */,
+				3E957466293B5FFB00786A43 /* CountriesViewModelProtocol.swift */,
+				3E957480293C871800786A43 /* DetailViewModel.swift */,
+				3E957482293C874A00786A43 /* DetailViewModelProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3E95745B293B54C500786A43 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3E95745F293B579900786A43 /* Service.swift */,
+				3E957461293B587500786A43 /* CountriesService.swift */,
+				3E957486293C889300786A43 /* DetailService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3E957463293B5C7D00786A43 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3E957464293B5C9C00786A43 /* Countries.swift */,
+				3E957484293C885500786A43 /* Detail.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3E957474293B7E2100786A43 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3E957468293B603800786A43 /* Dynamic.swift */,
+				3E9574A9293F97B700786A43 /* Loader.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		3E957477293B898200786A43 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3E957478293B89A200786A43 /* UITableView+Extension.swift */,
+				3E957488293DB51A00786A43 /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3E95747A293C7F6300786A43 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3E957470293B71AB00786A43 /* CountryCell.swift */,
+				3E957471293B71AB00786A43 /* CountryCell.xib */,
+				3E9574AF293FA98A00786A43 /* ErrorView.swift */,
+				3E9574B129406AC100786A43 /* ErrorView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3E95747D293C7FEA00786A43 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				3E957433293B543E00786A43 /* LaunchScreen.storyboard */,
+				3E95742E293B543D00786A43 /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		3E95747E293C800500786A43 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3E957431293B543E00786A43 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3E95747F293C806000786A43 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				3E957475293B7E3900786A43 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		3E95748E293DD74000786A43 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				3E95748C293DD35500786A43 /* MockDetailService.swift */,
+				3E957498293E0DD000786A43 /* MockCountriesService.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		3E95749A293E204D00786A43 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E95742C293B543D00786A43 /* CountriesViewController.swift */,
+				3E95747B293C7F8300786A43 /* DetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3E95749B293E20BF00786A43 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				3E95748A293DCAE800786A43 /* DetailViewModelTests.swift */,
+				3E957496293E0A0300786A43 /* CountriesViewModelTests.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		3E95749C293F5F7400786A43 /* ScreenShots */ = {
+			isa = PBXGroup;
+			children = (
+				3E9574A2293F611800786A43 /* Simulator Screen Shot - iPhone SE (3rd generation) - 2022-12-06 at 16.59.58.png */,
+				3E9574A1293F611800786A43 /* Simulator Screen Shot - iPhone SE (3rd generation) - 2022-12-06 at 17.00.15.png */,
+				3E95749D293F603B00786A43 /* Screenshot 2022-12-06 at 4.58.38 PM.png */,
+				3E95749E293F603B00786A43 /* Screenshot 2022-12-06 at 4.58.53 PM.png */,
+			);
+			path = ScreenShots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +413,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E9574A0293F603B00786A43 /* Screenshot 2022-12-06 at 4.58.53 PM.png in Resources */,
+				3E9574A3293F611800786A43 /* Simulator Screen Shot - iPhone SE (3rd generation) - 2022-12-06 at 17.00.15.png in Resources */,
+				3E957473293B71AB00786A43 /* CountryCell.xib in Resources */,
 				3E957435293B543E00786A43 /* LaunchScreen.storyboard in Resources */,
+				3E95749F293F603B00786A43 /* Screenshot 2022-12-06 at 4.58.38 PM.png in Resources */,
 				3E957432293B543E00786A43 /* Assets.xcassets in Resources */,
 				3E957430293B543D00786A43 /* Main.storyboard in Resources */,
+				3E9574A4293F611800786A43 /* Simulator Screen Shot - iPhone SE (3rd generation) - 2022-12-06 at 16.59.58.png in Resources */,
+				3E9574B229406AC100786A43 /* ErrorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +446,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E95742D293B543D00786A43 /* ViewController.swift in Sources */,
+				3E95747C293C7F8300786A43 /* DetailViewController.swift in Sources */,
+				3E957483293C874A00786A43 /* DetailViewModelProtocol.swift in Sources */,
+				3E957481293C871800786A43 /* DetailViewModel.swift in Sources */,
+				3E95742D293B543D00786A43 /* CountriesViewController.swift in Sources */,
+				3E9574AA293F97B700786A43 /* Loader.swift in Sources */,
+				3E957476293B7E3900786A43 /* Constants.swift in Sources */,
 				3E957429293B543D00786A43 /* AppDelegate.swift in Sources */,
+				3E957487293C889300786A43 /* DetailService.swift in Sources */,
+				3E957489293DB51A00786A43 /* UIColor+Extensions.swift in Sources */,
+				3E957472293B71AB00786A43 /* CountryCell.swift in Sources */,
+				3E957467293B5FFB00786A43 /* CountriesViewModelProtocol.swift in Sources */,
+				3E957469293B603800786A43 /* Dynamic.swift in Sources */,
+				3E957460293B579A00786A43 /* Service.swift in Sources */,
+				3E957485293C885500786A43 /* Detail.swift in Sources */,
 				3E95742B293B543D00786A43 /* SceneDelegate.swift in Sources */,
+				3E957462293B587500786A43 /* CountriesService.swift in Sources */,
+				3E957465293B5C9C00786A43 /* Countries.swift in Sources */,
+				3E95745A293B548400786A43 /* CountriesViewModel.swift in Sources */,
+				3E957479293B89A200786A43 /* UITableView+Extension.swift in Sources */,
+				3E9574B0293FA98A00786A43 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +473,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E957440293B543E00786A43 /* CoronaStatsTests.swift in Sources */,
+				3E95748B293DCAE800786A43 /* DetailViewModelTests.swift in Sources */,
+				3E957499293E0DD000786A43 /* MockCountriesService.swift in Sources */,
+				3E95748D293DD35500786A43 /* MockDetailService.swift in Sources */,
+				3E957497293E0A0300786A43 /* CountriesViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +650,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -469,6 +678,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
