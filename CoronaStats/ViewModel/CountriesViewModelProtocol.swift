@@ -13,5 +13,6 @@ protocol CountriesViewModelProtocol {
     var error: Dynamic<String?> { get }
     func fetchCountries()
     func didSelectItemAt(indexPath: IndexPath)
+    var filteredItems: [String]? { get set }
 }
 

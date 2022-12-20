@@ -13,6 +13,7 @@ class CountriesViewController: UIViewController {
     
     // MARK: - Properties
     let countriesViewModel = CountriesViewModel(withService: CountriesService())
+    let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -32,13 +33,19 @@ class CountriesViewController: UIViewController {
         // Data Binding
         setupCountriesViewModelObserver()
         
+        setupSearchBar()
+        
         // fetch countries data
         self.countriesViewModel.fetchCountries()
-      
-       
     }
     
     // MARK: - Private Functions
+    private func setupSearchBar() {
+        searchController.searchResultsUpdater = self
+        definesPresentationContext = true
+        countriesTableView.tableHeaderView = searchController.searchBar
+    }
+    
     private func setupCountriesViewModelObserver() {
         countriesViewModel.countries.bind {[weak self] _ in
             DispatchQueue.main.async {
@@ -64,7 +71,7 @@ class CountriesViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension CountriesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countriesViewModel.countries.value?.count ?? 0 // 4
+        return countriesViewModel.filteredItems?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,7 +79,7 @@ extension CountriesViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let countryName = countriesViewModel.countries.value?[indexPath.row] // "name"
+        let countryName = countriesViewModel.filteredItems?[indexPath.row]
         cell.configure(countryName)
         return cell
     }
@@ -87,7 +94,23 @@ extension CountriesViewController: UITableViewDelegate {
         }
         let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         detailViewController.configure(viewModel: DetailViewModel(countryName: country))
-       // detailView.detailViewModel.countryName = self.countriesViewModel.selectedData
         self.navigationController?.pushViewController(detailViewController,animated:true)
+    }
+}
+
+//MARK: - UISearchResultsUpdating
+extension CountriesViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        // If we haven't typed anything into the search bar then do not filter the results
+        guard let items = countriesViewModel.countries.value else { return }
+        if searchController.searchBar.text! == "" {
+            countriesViewModel.filteredItems = items
+        } else {
+            // Filter the results
+            countriesViewModel.filteredItems = items.filter { $0.lowercased().contains(searchController.searchBar.text!.lowercased()) }
+        }
+        
+        self.countriesTableView.reloadData()
     }
 }

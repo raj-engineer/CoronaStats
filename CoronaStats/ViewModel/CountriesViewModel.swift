@@ -13,6 +13,7 @@ class CountriesViewModel: CountriesViewModelProtocol {
     var selectedData: String?
     var countries: Dynamic<[String]?> = Dynamic(nil)
     var error: Dynamic<String?> = Dynamic(nil)
+    var filteredItems: [String]?
     
     // MARK: - Properties
     private var countriesService: CountriesServiceProtocol?
@@ -38,6 +39,7 @@ class CountriesViewModel: CountriesViewModelProtocol {
             /// Bind data
             if let _data = data, !(_data.response?.isEmpty == true) {
                 self?.countries.value = _data.response
+                self?.filteredItems = _data.response
             } else {
                 self?.error.value = err?.localizedDescription ?? Errors.NoData.rawValue
             }
@@ -45,7 +47,7 @@ class CountriesViewModel: CountriesViewModelProtocol {
     }
     
     func didSelectItemAt(indexPath: IndexPath) {
-        guard let countryName = countries.value?[indexPath.row] else { return }
+        guard let countryName = filteredItems?[indexPath.row] else { return }
         selectedData = countryName
     }
 }

@@ -42,6 +42,7 @@
 		3E9574AA293F97B700786A43 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9574A9293F97B700786A43 /* Loader.swift */; };
 		3E9574B0293FA98A00786A43 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9574AF293FA98A00786A43 /* ErrorView.swift */; };
 		3E9574B229406AC100786A43 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E9574B129406AC100786A43 /* ErrorView.xib */; };
+		3ED7D0532951CAC200663E17 /* Screenshot 2022-12-20 at 4.18.13 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ED7D0522951CAC200663E17 /* Screenshot 2022-12-20 at 4.18.13 PM.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		3E9574A9293F97B700786A43 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		3E9574AF293FA98A00786A43 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		3E9574B129406AC100786A43 /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		3ED7D0522951CAC200663E17 /* Screenshot 2022-12-20 at 4.18.13 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2022-12-20 at 4.18.13 PM.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +307,7 @@
 				3E9574A1293F611800786A43 /* Simulator Screen Shot - iPhone SE (3rd generation) - 2022-12-06 at 17.00.15.png */,
 				3E95749D293F603B00786A43 /* Screenshot 2022-12-06 at 4.58.38 PM.png */,
 				3E95749E293F603B00786A43 /* Screenshot 2022-12-06 at 4.58.53 PM.png */,
+				3ED7D0522951CAC200663E17 /* Screenshot 2022-12-20 at 4.18.13 PM.png */,
 			);
 			path = ScreenShots;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ED7D0532951CAC200663E17 /* Screenshot 2022-12-20 at 4.18.13 PM.png in Resources */,
 				3E9574A0293F603B00786A43 /* Screenshot 2022-12-06 at 4.58.53 PM.png in Resources */,
 				3E9574A3293F611800786A43 /* Simulator Screen Shot - iPhone SE (3rd generation) - 2022-12-06 at 17.00.15.png in Resources */,
 				3E957473293B71AB00786A43 /* CountryCell.xib in Resources */,
