@@ -16,6 +16,6 @@ class CountriesService: CountriesServiceProtocol {
     // MARK: - Protocol Function
     func fetchCountries(completion: @escaping (Countries?, Error?) -> ()) {
         let urlString = UrlEnum.countryUrl
-        Service().fetchGenericJSONData(urlString: urlString, completion: completion)
+        ApiService().fetchGenericJSONData(urlString: urlString, completion: completion)
     }
 }

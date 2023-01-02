@@ -16,6 +16,6 @@ class DetailService: DetailServiceProtocol {
     // MARK: - Protocol Function
     func fetchCountryDetail(searchText: String, completion: @escaping (Detail?, Error?) -> ()) {
         let urlString = UrlEnum.detailUrl+searchText
-        Service().fetchGenericJSONData(urlString: urlString, completion: completion)
+        ApiService().fetchGenericJSONData(urlString: urlString, completion: completion)
     }
 }

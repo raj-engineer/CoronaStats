@@ -6,7 +6,7 @@
 //
 
 import Foundation
-final class Service {
+final class ApiService {
 
    public func fetchGenericJSONData<T: Decodable>(urlString: String, completion: @escaping (T?, Error?) -> ()) {
         guard let url = URL(string: urlString) else { return }
