@@ -9,9 +9,13 @@ import Foundation
 
 // MARK: - Url
 enum UrlEnum {
-    static let baseUrl = "https://covid-193.p.rapidapi.com/"
-    static let countryUrl = baseUrl+"countries"
-    static let detailUrl = baseUrl+"statistics?country="
+    // Host
+    static let baseURL = "https://covid-193.p.rapidapi.com"
+    // path
+    static let statistics = "/statistics"
+    static let countries = "/countries"
+    // Optional- Query Component Key
+    static let queryKey = "country"
 }
 
 // MARK: - Api Key
@@ -26,6 +30,7 @@ enum keys {
 enum Errors: String {
     case NOInternetConnection = "NO Internet Connection , Try Again"
     case NoData = "Data Not Available"
+    case InvalidUrl = "Url Not Valid"
 }
 
 enum ErrorResult: Error {

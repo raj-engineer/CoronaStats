@@ -12,10 +12,14 @@ protocol DetailServiceProtocol : AnyObject {
 }
 
 class DetailService: DetailServiceProtocol {
+    private var request: APIRequest<DetailResource>?
     
     // MARK: - Protocol Function
     func fetchCountryDetail(searchText: String, completion: @escaping (Detail?, Error?) -> ()) {
-        let urlString = UrlEnum.detailUrl+searchText
-        ApiService().fetchGenericJSONData(urlString: urlString, completion: completion)
+        let resource = DetailResource(queryValue: searchText)
+        let request = APIRequest(resource: resource)
+        
+        self.request =  request
+        request.execute(withCompletion: completion)
     }
 }

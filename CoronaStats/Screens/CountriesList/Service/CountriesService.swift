@@ -12,10 +12,13 @@ protocol CountriesServiceProtocol : AnyObject {
 }
 
 class CountriesService: CountriesServiceProtocol {
+    private var request: APIRequest<CountriesResource>?
     
     // MARK: - Protocol Function
     func fetchCountries(completion: @escaping (Countries?, Error?) -> ()) {
-        let urlString = UrlEnum.countryUrl
-        ApiService().fetchGenericJSONData(urlString: urlString, completion: completion)
+        let resource = CountriesResource()
+        let request = APIRequest(resource: resource)
+        self.request =  request
+        request.execute(withCompletion: completion)
     }
 }

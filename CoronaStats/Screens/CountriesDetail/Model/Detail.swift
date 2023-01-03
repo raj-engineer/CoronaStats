@@ -8,26 +8,26 @@
 import Foundation
 
 // MARK: - Detail
-struct Detail: Codable {
+struct Detail: Decodable {
     var get: String?
     let response: [Response]?
     let results: Int?
 }
 
-struct Response: Codable {
+struct Response: Decodable {
     let country: String
     var cases: Cases?
     var deaths: Deaths?
 }
 
-struct Cases: Codable {
+struct Cases: Decodable {
     let total: Int?
     let recovered: Int?
     let new: String?
     let active: Int?
 }
 
-struct Deaths: Codable {
+struct Deaths: Decodable {
     let new: String?
     let total: Int?
 }

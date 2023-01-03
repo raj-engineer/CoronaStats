@@ -16,7 +16,6 @@
 		3E95744A293B543E00786A43 /* CoronaStatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957449293B543E00786A43 /* CoronaStatsUITests.swift */; };
 		3E95744C293B543E00786A43 /* CoronaStatsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E95744B293B543E00786A43 /* CoronaStatsUITestsLaunchTests.swift */; };
 		3E95745A293B548400786A43 /* CountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957459293B548400786A43 /* CountriesViewModel.swift */; };
-		3E957460293B579A00786A43 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E95745F293B579900786A43 /* ApiService.swift */; };
 		3E957462293B587500786A43 /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957461293B587500786A43 /* CountriesService.swift */; };
 		3E957465293B5C9C00786A43 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957464293B5C9C00786A43 /* Countries.swift */; };
 		3E957467293B5FFB00786A43 /* CountriesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957466293B5FFB00786A43 /* CountriesViewModelProtocol.swift */; };
@@ -42,7 +41,10 @@
 		3E9574AA293F97B700786A43 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9574A9293F97B700786A43 /* Loader.swift */; };
 		3E9574B0293FA98A00786A43 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9574AF293FA98A00786A43 /* ErrorView.swift */; };
 		3E9574B229406AC100786A43 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E9574B129406AC100786A43 /* ErrorView.xib */; };
+		3ECAD61929641ABE00D7E6C7 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECAD61829641ABE00D7E6C7 /* APIRequest.swift */; };
 		3ED7D0532951CAC200663E17 /* Screenshot 2022-12-20 at 4.18.13 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ED7D0522951CAC200663E17 /* Screenshot 2022-12-20 at 4.18.13 PM.png */; };
+		3EF9906429632E480051534D /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF9906329632E480051534D /* NetworkRequest.swift */; };
+		3EF990662963351E0051534D /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF990652963351E0051534D /* APIResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +78,6 @@
 		3E957449293B543E00786A43 /* CoronaStatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaStatsUITests.swift; sourceTree = "<group>"; };
 		3E95744B293B543E00786A43 /* CoronaStatsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaStatsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3E957459293B548400786A43 /* CountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModel.swift; sourceTree = "<group>"; };
-		3E95745F293B579900786A43 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		3E957461293B587500786A43 /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
 		3E957464293B5C9C00786A43 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		3E957466293B5FFB00786A43 /* CountriesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -102,7 +103,10 @@
 		3E9574A9293F97B700786A43 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		3E9574AF293FA98A00786A43 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		3E9574B129406AC100786A43 /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		3ECAD61829641ABE00D7E6C7 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		3ED7D0522951CAC200663E17 /* Screenshot 2022-12-20 at 4.18.13 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2022-12-20 at 4.18.13 PM.png"; sourceTree = "<group>"; };
+		3EF9906329632E480051534D /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		3EF990652963351E0051534D /* APIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 		3E957427293B543D00786A43 /* CoronaStats */ = {
 			isa = PBXGroup;
 			children = (
+				3EF9906229632E2C0051534D /* Network */,
 				3EF990552962C3FA0051534D /* Application */,
 				3E95747F293C806000786A43 /* Constants */,
 				3E957477293B898200786A43 /* Extensions */,
@@ -206,7 +211,6 @@
 			children = (
 				3E957468293B603800786A43 /* Dynamic.swift */,
 				3E9574A9293F97B700786A43 /* Loader.swift */,
-				3E95745F293B579900786A43 /* ApiService.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -384,6 +388,16 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		3EF9906229632E2C0051534D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3EF9906329632E480051534D /* NetworkRequest.swift */,
+				3EF990652963351E0051534D /* APIResource.swift */,
+				3ECAD61829641ABE00D7E6C7 /* APIRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -523,18 +537,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E95747C293C7F8300786A43 /* DetailViewController.swift in Sources */,
+				3EF9906429632E480051534D /* NetworkRequest.swift in Sources */,
 				3E957483293C874A00786A43 /* DetailViewModelProtocol.swift in Sources */,
 				3E957481293C871800786A43 /* DetailViewModel.swift in Sources */,
 				3E95742D293B543D00786A43 /* CountriesViewController.swift in Sources */,
 				3E9574AA293F97B700786A43 /* Loader.swift in Sources */,
+				3EF990662963351E0051534D /* APIResource.swift in Sources */,
 				3E957476293B7E3900786A43 /* Constants.swift in Sources */,
 				3E957429293B543D00786A43 /* AppDelegate.swift in Sources */,
 				3E957487293C889300786A43 /* DetailService.swift in Sources */,
+				3ECAD61929641ABE00D7E6C7 /* APIRequest.swift in Sources */,
 				3E957489293DB51A00786A43 /* UIColor+Extensions.swift in Sources */,
 				3E957472293B71AB00786A43 /* CountryCell.swift in Sources */,
 				3E957467293B5FFB00786A43 /* CountriesViewModelProtocol.swift in Sources */,
 				3E957469293B603800786A43 /* Dynamic.swift in Sources */,
-				3E957460293B579A00786A43 /* ApiService.swift in Sources */,
 				3E957485293C885500786A43 /* Detail.swift in Sources */,
 				3E95742B293B543D00786A43 /* SceneDelegate.swift in Sources */,
 				3E957462293B587500786A43 /* CountriesService.swift in Sources */,

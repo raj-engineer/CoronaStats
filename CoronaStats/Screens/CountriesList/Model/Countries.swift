@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Countries
-struct Countries: Codable {
+struct Countries: Decodable {
     let get: String?
     let response: [String]?
     let results: Int?
