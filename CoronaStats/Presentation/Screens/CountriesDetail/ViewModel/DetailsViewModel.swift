@@ -42,7 +42,7 @@ class DetailsViewModel : DetailsViewModelProtocol {
     }
     
     // MARK: - Ouput function
-    func getCountryDetail() -> DetailEntity? {
+    func getDetailEntity() -> DetailEntity? {
         return detailEntity.value
     }
 }

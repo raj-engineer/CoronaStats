@@ -57,7 +57,7 @@ class DetailsViewController: UIViewController {
     }
     
     private func setUIData() {
-        guard let detailEntity = self.detailViewModel.getCountryDetail() else {return}
+        guard let detailEntity = self.detailViewModel.getDetailEntity() else {return}
         countConfirmedLabel.text = detailEntity.confirmed
         countRecoveredLabel.text = detailEntity.recovered
         countDeceasedLabel.text = detailEntity.deceased

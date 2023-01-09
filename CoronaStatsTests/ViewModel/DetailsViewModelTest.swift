@@ -9,16 +9,11 @@
 import XCTest
 @testable import CoronaStats
 
-class DetailViewModelTest: XCTestCase {
+class DetailViewModelTest: MockBase {
     
     // MARK: - Properties
     var viewModel: DetailsViewModel!
     private var mockUseCase:  MockDetailUseCase!
-    let mockCountry = "India"
-    
-    lazy var mockDetailEntity: DetailEntity = {
-        DetailEntity(confirmed: "44674667", deceased: "530630", recovered: "44138554")
-    }()
     
     // MARK: - setup
     override func setUp() {
@@ -43,7 +38,7 @@ class DetailViewModelTest: XCTestCase {
         self.viewModel.input.fetchCountryDetail()
         
         // Then
-        XCTAssertNotNil(self.viewModel.output.getCountryDetail())
+        XCTAssertNotNil(self.viewModel.output.getDetailEntity())
     }
     
     /// test  fetchCountryDetail  failure case
@@ -56,31 +51,31 @@ class DetailViewModelTest: XCTestCase {
         self.viewModel.fetchCountryDetail()
         
         // Then
-        XCTAssertNil(self.viewModel.getCountryDetail())
+        XCTAssertNil(self.viewModel.output.getDetailEntity())
     }
     
-    /// test  getCountryDetail  sucess case if have data
-    func testGetCountryDetail() {
+    /// test  getDetailEntity  sucess case if have data
+    func testGetDetailEntity() {
         // Given
         mockUseCase.detailData = mockDetailEntity
         self.viewModel.fetchCountryDetail()
         
         // When
-        let model = self.viewModel.getCountryDetail()
+        let model = self.viewModel.getDetailEntity()
         
         // Then
         XCTAssertNotNil(model)
-        XCTAssertEqual(model?.confirmed, "44674667")
-        XCTAssertEqual(model?.recovered, "44138554")
-        XCTAssertEqual(model?.deceased, "530630")
+        XCTAssertEqual(model?.confirmed, mockDetailEntity.confirmed)
+        XCTAssertEqual(model?.recovered, mockDetailEntity.recovered)
+        XCTAssertEqual(model?.deceased, mockDetailEntity.deceased)
     }
     
-    /// test  getCountryDetail  fail case if no data
-    func testGetCountryDetailWithNil() {
+    /// test  getDetailEntity  fail case if no data
+    func testGetDetailEntityWithNil() {
         // Given - By default- nil
         
         // When
-        let model = self.viewModel.getCountryDetail()
+        let model = self.viewModel.output.getDetailEntity()
         
         // Then
         XCTAssertNil(model)

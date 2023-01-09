@@ -8,21 +8,12 @@
 import XCTest
 @testable import CoronaStats
 
-class CountriesListViewModelTest: XCTestCase {
+class CountriesListViewModelTest: MockBase {
     
     // MARK: - Properties
     var viewModel: CountriesListViewModel!
     private var mockUseCase:  MockCountriesUseCase!
-    let mockCountry = "India"
-    
-    lazy var mockCountriesData: Countries = {
-        let data = mockCountriesJSON.data(using: .utf8)!
-        return try! JSONDecoder().decode(Countries.self, from: data)
-    }()
-    
-    lazy var mockEntity: CountriesEntity? = {
-        CountriesMapper().getCountriesEntity(responseModel: mockCountriesData)
-    }()
+
     
     // MARK: - setup
     override func setUp() {
@@ -103,23 +94,5 @@ class CountriesListViewModelTest: XCTestCase {
         // Then
         let count = viewModel.output.getCountriesEntity()?.filteredItems?.count
         XCTAssertEqual(count, 3)
-    }
-}
-
-extension CountriesListViewModelTest {
-    var mockCountriesJSON: String {
-        return """
-        {
-          "get": "countries",
-          "parameters": [],
-          "errors": [],
-          "results": 2,
-          "response": [
-            "India",
-            "China",
-            "Indonesia"
-          ]
-        }
-        """
     }
 }

@@ -35,6 +35,12 @@ enum Errors: String {
 
 enum ErrorResult: Error {
     case custom(string: String)
+    func associatedValue() -> String {
+        switch self {
+        case .custom(let value):
+            return value
+        }
+    }
 }
 
 enum ScreenTitle {

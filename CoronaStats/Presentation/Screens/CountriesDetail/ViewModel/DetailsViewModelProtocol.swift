@@ -14,7 +14,7 @@ protocol DetailViewModelInput {
 protocol DetailViewModelOutput {
     var detailEntity: Dynamic<DetailEntity?> { get }
     var loaderStatus: Dynamic<Bool> { get }
-    func getCountryDetail() -> DetailEntity?
+    func getDetailEntity() -> DetailEntity?
 }
 
 protocol DetailsViewModelProtocol: DetailViewModelInput, DetailViewModelOutput {

@@ -1,14 +1,16 @@
 //
-//  MockCountriesUseCase.swift
+//  MockCountriesRepository.swift
 //  CoronaStatsTests
 //
 //  Created by Rajesh Rajesh on 09/01/23.
 //
 
+
 import Foundation
 @testable import CoronaStats
 
-class MockCountriesUseCase: MockBase, GetCountriesUseCaseProtocol {
+class MockCountriesRepository: MockBase,CountriesRepositoryProtocol {
+    
     // MARK: - Properties
     var countriesData: CountriesEntity?
     

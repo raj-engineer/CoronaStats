@@ -8,7 +8,7 @@
 import Foundation
 @testable import CoronaStats
 
-class MockDetailUseCase: GetDetailUseCaseProtocol {
+class MockDetailUseCase: MockBase, GetDetailUseCaseProtocol {
     
     // MARK: - Properties
     var detailData: DetailEntity?
@@ -19,7 +19,7 @@ class MockDetailUseCase: GetDetailUseCaseProtocol {
         if let data = detailData {
             completion(data, nil)
         } else {
-            completion(nil, ErrorResult.custom(string: "mock Error"))
+            completion(nil, ErrorResult.custom(string: mockErrorMessage))
         }
     }
 }
