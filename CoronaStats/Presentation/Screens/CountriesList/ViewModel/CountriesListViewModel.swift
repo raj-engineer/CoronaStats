@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CountriesListViewModel:NSObject, CountriesListViewModelProtocol {
+final class CountriesListViewModel: CountriesListViewModelProtocol {
     
     // MARK: - Properties
     var input: CountriesListViewModelInput { return self }
@@ -18,16 +18,10 @@ class CountriesListViewModel:NSObject, CountriesListViewModelProtocol {
     
     // MARK: - Private Properties
     private let getCountriesUseCase: GetCountriesUseCaseProtocol
-    private var countriesEntity: CountriesEntity?
+    private var countriesEntity: CountriesEntity = CountriesEntity()
     
     // MARK: - init
-    override init() {
-        let repository = CountriesRepository(dataSource: CountriesDataSource())
-        let useCase =  GetCountriesUseCase(repository: repository)
-        self.getCountriesUseCase = useCase
-    }
-    
-    init(getCountriesUseCase: GetCountriesUseCaseProtocol) {
+    init(with getCountriesUseCase: GetCountriesUseCaseProtocol = GetCountriesUseCase()) {
         self.getCountriesUseCase = getCountriesUseCase
     }
     
@@ -35,37 +29,43 @@ class CountriesListViewModel:NSObject, CountriesListViewModelProtocol {
     func fetchCountries() {
         /// bind data to show Activity indicator
         loaderStatus.value = true
-        
-        self.getCountriesUseCase.fetchCountries {[weak self] (countriesEntity, err) in
-            /// Bind data
-            self?.loaderStatus.value = false  /// to hide Activity indicator
-            if let _countriesEntity = countriesEntity, !(_countriesEntity.response?.isEmpty == true) {
-                self?.reloadTable.value = true
-                self?.countriesEntity = _countriesEntity
-                self?.setFilteredList(items: _countriesEntity.response)
-            } else {
-                self?.error.value = err?.localizedDescription ?? Errors.NoData.rawValue
+        self.getCountriesUseCase.fetchCountries { [weak self] result in
+            self?.loaderStatus.value = false
+            switch result {
+            case .success(let countriesEntity):
+                if !(countriesEntity.response.isEmpty == true) {
+                    self?.countriesEntity = countriesEntity
+                    self?.setFilteredList(items: countriesEntity.response)
+                    self?.reloadTable.value = true
+                } else {
+                    self?.error.value = Errors.NoData.rawValue
+                }
+            case .failure(let error):
+                self?.error.value = error.localizedDescription
             }
         }
     }
     
-    private func setFilteredList(items: [String]?){
-        self.countriesEntity?.filteredItems = items
+    private func setFilteredList(items: [String]){
+        self.countriesEntity.filteredItems = items
     }
     
     // MARK: - Ouput function
     func numberOfSection() -> Int {
-        return  self.countriesEntity?.filteredItems?.count ?? 0
+       // return  self.countriesEntity?.filteredItems?.count ?? 0
+        return self.countriesEntity.filteredItems.count
     }
     
-    func getItem(at indexPath: IndexPath) -> String? {
-        let countryName = self.countriesEntity?.filteredItems?[indexPath.row]
+    func getItem(at indexPath: IndexPath) -> String {
+        guard !(self.countriesEntity.filteredItems.isEmpty) else { return "" }
+        let countryName = self.countriesEntity.filteredItems[indexPath.row]
         return countryName
     }
     
     func filterCountriesList(for searchText: String) {
         // If we haven't typed anything into the search bar then do not filter the results
-        guard let countries = countriesEntity?.response else { return }
+       // guard let countries = countriesEntity.response else { return }
+        let countries = countriesEntity.response
         if searchText == "" {
             setFilteredList(items: countries)
         } else {
@@ -78,7 +78,7 @@ class CountriesListViewModel:NSObject, CountriesListViewModelProtocol {
         self.reloadTable.value = true
     }
     
-    func getCountriesEntity() -> CountriesEntity? {
+    func getCountriesEntity() -> CountriesEntity {
         return countriesEntity
     }
 }

@@ -35,8 +35,13 @@ class CountriesUseCaseTest: MockBase {
         var err : ErrorResult?
         
         // When
-        useCase.fetchCountries {( _, error) in
-            err = error as? ErrorResult
+        useCase.fetchCountries { (result: Result<CountriesEntity, Error>) in
+            switch result {
+            case .success(_):
+                XCTFail("Success not expected")
+            case .failure(let error):
+               err = error as? ErrorResult
+            }
         }
         
         // Then
@@ -50,11 +55,17 @@ class CountriesUseCaseTest: MockBase {
         var countries: CountriesEntity?
         
         // When
-        useCase.fetchCountries { (countriesEntity, _) in
-            countries = countriesEntity
+        useCase.fetchCountries { (result: Result<CountriesEntity, Error>) in
+            switch result {
+            case .success(let countriesEntity):
+                
+                countries = countriesEntity
+            case .failure(_):
+                XCTFail("failure not expected")
+            }
         }
         
         // Then
-        XCTAssertEqual(countries?.response?.count, mockEntity?.response?.count)
+        XCTAssertEqual(countries?.response.count, mockEntity?.response.count)
     }
 }

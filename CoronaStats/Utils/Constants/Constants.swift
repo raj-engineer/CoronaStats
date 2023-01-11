@@ -11,11 +11,17 @@ import Foundation
 enum UrlEnum {
     // Host
     static let baseURL = "https://covid-193.p.rapidapi.com"
+    static let host = "covid-193.p.rapidapi.com"
     // path
     static let statistics = "/statistics"
     static let countries = "/countries"
     // Optional- Query Component Key
     static let queryKey = "country"
+}
+
+enum Alert {
+    static let alertTitle = "Error"
+    static let okTitle = "OK"
 }
 
 // MARK: - Api Key

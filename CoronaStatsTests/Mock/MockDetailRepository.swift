@@ -9,16 +9,17 @@ import Foundation
 @testable import CoronaStats
 
 class MockDetailRepository: MockBase,DetailRepositoryProtocol {
-    
+  
     // MARK: - Properties
     var detailData: DetailEntity?
     
     // MARK: - Protocol Function
-    func fetchCountryDetail(searchText: String, completion: @escaping (CoronaStats.DetailEntity?, Error?) -> ()) {
+    func fetchCountryDetail(searchText: String, completion: @escaping CoronaStats.DetailEntityResponse) {
         if let data = detailData {
-            completion(data, nil)
+            completion(.success(data))
         } else {
-            completion(nil, ErrorResult.custom(string: mockErrorMessage))
+            completion(.failure(ErrorResult.custom(string: mockErrorMessage)))
         }
     }
 }
+

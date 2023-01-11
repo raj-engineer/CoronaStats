@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-class CountriesListViewController: UIViewController {
+final class CountriesListViewController: UIViewController {
     // MARK: - IBOutlet
-    @IBOutlet weak var countriesTableView: UITableView!
+    @IBOutlet private weak var countriesTableView: UITableView!
     
     // MARK: - Properties
-    let countriesViewModel: CountriesListViewModelProtocol = CountriesListViewModel()
-    let searchController = UISearchController(searchResultsController: nil)
+    private let countriesViewModel: CountriesListViewModelProtocol = CountriesListViewModel()
+    private let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -23,24 +23,22 @@ class CountriesListViewController: UIViewController {
         
         // set title
         self.title = ScreenTitle.Countries
-        
+        setupTableView()
+        setupCountriesViewModelObserver()
+        setupSearchBar()
+        // fetch countries data
+        self.countriesViewModel.fetchCountries()
+    }
+    
+    // MARK: - Private Functions
+    private func setupTableView() {
         // Register table cell
         countriesTableView.registerCell(type: CountryCell.self)
         
         // delegate the TableView
         countriesTableView.dataSource = self
         countriesTableView.delegate = self
-        
-        // Data Binding
-        setupCountriesViewModelObserver()
-        
-        setupSearchBar()
-        
-        // fetch countries data
-        self.countriesViewModel.fetchCountries()
     }
-    
-    // MARK: - Private Functions
     private func setupSearchBar() {
         searchController.searchResultsUpdater = self
         definesPresentationContext = true
@@ -64,16 +62,19 @@ class CountriesListViewController: UIViewController {
         /// show error 
         countriesViewModel.output.error.bind { [weak self] error in
             DispatchQueue.main.async {
-                self?.displayErrorOnUI(message: error)
+                self?.displayAlert(with: error)
             }
         }
     }
     
-    private func displayErrorOnUI(message: String?) {
-        let errorView = ErrorView(frame: CGRect(x: .zero, y: .zero, width: self.view.frame.width, height: self.view.frame.height/4))
-        errorView.center = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height/2)
-        errorView.updateErrorText(title: message)
-        self.view.addSubview(errorView)
+    private func displayAlert(with message: String?) {
+        let alertController = UIAlertController(title: Alert.alertTitle, message: message ?? "", preferredStyle: .alert)
+        
+        let OKAction = UIAlertAction(title: Alert.okTitle, style: .default) { (action:UIAlertAction!) in
+            // Code in this block will trigger when OK button tapped.
+        }
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion:nil)
     }
 }
 
@@ -97,10 +98,10 @@ extension CountriesListViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension CountriesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let country = self.countriesViewModel.getItem(at: indexPath) else {
+        guard let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController else {
             return
         }
-        let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        let country = self.countriesViewModel.getItem(at: indexPath)
         detailViewController.configure(viewModel: DetailsViewModel(countryName: country))
         self.navigationController?.pushViewController(detailViewController,animated:true)
     }

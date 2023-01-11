@@ -8,13 +8,13 @@
 import Foundation
 
 protocol DetailMapperProtocol {
-    func getDetailEntity(responseModel: Detail?) -> DetailEntity?
+    func getDetailEntity(responseModel: Detail) -> DetailEntity
 }
 
 struct DetailMapper: DetailMapperProtocol {
     
-    func getDetailEntity(responseModel: Detail?) -> DetailEntity? {
-        guard let object = responseModel?.response?.first else { return nil }
+    func getDetailEntity(responseModel: Detail) -> DetailEntity {
+        guard let object = responseModel.response?.first else { return DetailEntity() }
         var mapperModel = DetailEntity()
         if let confirmed = object.cases?.total {
             mapperModel.confirmed = String(confirmed)

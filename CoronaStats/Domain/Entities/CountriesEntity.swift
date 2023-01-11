@@ -10,6 +10,6 @@ import Foundation
 // MARK: - Struct
 struct CountriesEntity {
     // MARK: - Properties
-    var filteredItems: [String]?
-    var response: [String]?
+    var filteredItems: [String] = []
+    var response: [String] = []
 }

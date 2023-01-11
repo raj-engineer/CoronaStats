@@ -7,24 +7,25 @@
 
 import Foundation
 
-class CountriesRepository: CountriesRepositoryProtocol {
+final class CountriesRepository: CountriesRepositoryProtocol {
     // MARK: - Private Properties
-    private let dataSource: CountriesDataSourceProtocol
+    private let service: CountriesServiceProtocol
     
     // MARK: - init
-    init(dataSource: CountriesDataSourceProtocol) {
-        self.dataSource = dataSource
+    init(service: CountriesServiceProtocol = CountriesService()) {
+        self.service = service
     }
     
     // MARK: - function
-    func fetchCountries(completion: @escaping (CountriesEntity?, Error?) -> ()) {
-        let resource = CountriesResource()
-        let request = APIRequest(resource: resource)
-        self.dataSource.fetchCountries(apiRequest: request) { countries, err in
-            let countriesEntity = CountriesMapper().getCountriesEntity(responseModel: countries)
-           completion(countriesEntity,err)
+    func fetchCountries(completion: @escaping CountriesEntityResponse) {
+        self.service.fetchCountries { (result:Result<Countries, Error>) in
+            switch result {
+            case .success(let countries):
+                let countriesEntity = CountriesMapper().getCountriesEntity(responseModel: countries)
+                completion(.success(countriesEntity))
+            case .failure(_):
+                completion(.failure(NetworkError.failed))
+            }
         }
     }
-    
-    
 }

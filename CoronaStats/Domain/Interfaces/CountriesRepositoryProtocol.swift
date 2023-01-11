@@ -7,7 +7,9 @@
 
 import Foundation
 
-protocol CountriesRepositoryProtocol : AnyObject {
-    func fetchCountries(completion: @escaping (CountriesEntity?, Error?) -> ())
+typealias CountriesEntityResponse = (Result<CountriesEntity, Error>) -> Void
+
+protocol CountriesRepositoryProtocol: AnyObject {
+    func fetchCountries(completion: @escaping CountriesEntityResponse)
 }
 

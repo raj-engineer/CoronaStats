@@ -8,15 +8,15 @@
 import Foundation
 import UIKit
 
-class DetailsViewController: UIViewController {
+final class DetailsViewController: UIViewController {
     // MARK: - IBOutlet
-    @IBOutlet weak var factLabel: UILabel!
-    @IBOutlet weak var countConfirmedLabel: UILabel!
-    @IBOutlet weak var confirmedCaseLabel: UILabel!
-    @IBOutlet weak var countDeceasedLabel: UILabel!
-    @IBOutlet weak var deceasedCaseLabel: UILabel!
-    @IBOutlet weak var countRecoveredLabel: UILabel!
-    @IBOutlet weak var recoveredCaseLabel: UILabel!
+    @IBOutlet private weak var factLabel: UILabel!
+    @IBOutlet private weak var countConfirmedLabel: UILabel!
+    @IBOutlet private weak var confirmedCaseLabel: UILabel!
+    @IBOutlet private weak var countDeceasedLabel: UILabel!
+    @IBOutlet private weak var deceasedCaseLabel: UILabel!
+    @IBOutlet private weak var countRecoveredLabel: UILabel!
+    @IBOutlet private weak var recoveredCaseLabel: UILabel!
     
     // MARK: - Properties
     private var detailViewModel: DetailsViewModel!

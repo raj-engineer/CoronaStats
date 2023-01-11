@@ -7,37 +7,38 @@
 
 import Foundation
 
-class DetailsViewModel : DetailsViewModelProtocol {
+final class DetailsViewModel : DetailsViewModelProtocol {
     // MARK: - Properties
     var input: DetailViewModelInput { return self }
     var output: DetailViewModelOutput {return self }
     var loaderStatus: Dynamic<Bool> = Dynamic(false)
     var detailEntity: Dynamic<DetailEntity?> = Dynamic(nil)
+    var error: Dynamic<String?> = Dynamic(nil)
     let countryName: String
     
     // MARK: - Private Properties
     private let getDetailUseCase: GetDetailUseCaseProtocol
     
     // MARK: - initializer
-    init(with useCase: GetDetailUseCaseProtocol, countryName: String) {
+    init(with useCase: GetDetailUseCaseProtocol = GetDetailUseCase(), countryName: String) {
         self.getDetailUseCase = useCase
         self.countryName = countryName
-    }
-    
-    convenience init(countryName: String) {
-        let repository = DetailRepository(dataSource: DetailDataSource())
-        let useCase = GetDetailUseCase(repository: repository)
-        self.init(with: useCase, countryName: countryName)
     }
     
     // MARK: - Input function
     func fetchCountryDetail() {
         /// bind data to show Activity indicator
         loaderStatus.value = true
-        self.getDetailUseCase.fetchCountryDetail(searchText: countryName) {[weak self] (detailEntity, err) in
+        
+        self.getDetailUseCase.fetchCountryDetail(searchText: countryName) {[weak self] result in
             /// Bind data
-            self?.detailEntity.value = detailEntity
-            self?.loaderStatus.value = false  /// to hide Activity indicator
+            self?.loaderStatus.value = false
+            switch result {
+            case .success(let detailEntity):
+                self?.detailEntity.value = detailEntity
+            case .failure(let error):
+                self?.error.value = error.localizedDescription
+            }
         }
     }
     

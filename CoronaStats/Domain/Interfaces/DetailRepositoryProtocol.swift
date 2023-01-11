@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias DetailEntityResponse = (Result<DetailEntity, Error>) -> Void
+
 protocol DetailRepositoryProtocol : AnyObject {
-    func fetchCountryDetail(searchText: String, completion: @escaping (DetailEntity?, Error?) -> ())
+    func fetchCountryDetail(searchText: String, completion: @escaping DetailEntityResponse)
 }

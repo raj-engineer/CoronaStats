@@ -17,8 +17,8 @@ protocol CountriesListViewModelOutput {
     var reloadTable: Dynamic<Bool> { get }
     var error: Dynamic<String?> { get }
     func numberOfSection() -> Int
-    func getItem(at indexPath: IndexPath) -> String?
-    func getCountriesEntity() -> CountriesEntity?
+    func getItem(at indexPath: IndexPath) -> String
+    func getCountriesEntity() -> CountriesEntity
 }
 
 

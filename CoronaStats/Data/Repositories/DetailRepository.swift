@@ -7,23 +7,27 @@
 
 import Foundation
 
-class DetailRepository: DetailRepositoryProtocol {
+final class DetailRepository: DetailRepositoryProtocol {
     
     // MARK: - Private Properties
-    private let dataSource: DetailDataSourceProtocol
+    private let service: DetailServiceProtocol
     
     // MARK: - init
-    init(dataSource: DetailDataSourceProtocol) {
-        self.dataSource = dataSource
+    init(service: DetailServiceProtocol = DetailService()) {
+        self.service = service
     }
     
     // MARK: - function
-    func fetchCountryDetail(searchText: String, completion: @escaping (DetailEntity?, Error?) -> ()) {
-        let resource = DetailResource(queryValue: searchText)
-        let request = APIRequest(resource: resource)
-        self.dataSource.fetchCountryDetail(apiRequest: request) { detail, err in
-            let detailEntity = DetailMapper().getDetailEntity(responseModel: detail)
-            completion(detailEntity,err)
+    func fetchCountryDetail(searchText: String, completion: @escaping DetailEntityResponse) {
+        self.service.fetchCountryDetail(searchText: searchText) { (result: Result<Detail, Error>) in
+            switch result {
+            case .success(let detail):
+                let detailEntity = DetailMapper().getDetailEntity(responseModel: detail)
+                completion(.success(detailEntity))
+            case .failure(_):
+                completion(.failure(NetworkError.failed))
+            }
+
         }
     }
 }

@@ -14,12 +14,11 @@ class CountriesListViewModelTest: MockBase {
     var viewModel: CountriesListViewModel!
     private var mockUseCase:  MockCountriesUseCase!
 
-    
     // MARK: - setup
     override func setUp() {
         super.setUp()
         self.mockUseCase = MockCountriesUseCase()
-        self.viewModel = CountriesListViewModel(getCountriesUseCase: mockUseCase)
+        self.viewModel = CountriesListViewModel(with: mockUseCase)
     }
     
     override func tearDown() {
@@ -39,7 +38,8 @@ class CountriesListViewModelTest: MockBase {
         self.viewModel.input.fetchCountries()
         
         // Then
-        XCTAssertNotNil(self.viewModel.output.getCountriesEntity())
+        let filteredItem = self.viewModel.output.getCountriesEntity().filteredItems
+        XCTAssertEqual(filteredItem.count, 3)
     }
     
     /// test  fetchCountries  failure case
@@ -51,7 +51,8 @@ class CountriesListViewModelTest: MockBase {
         self.viewModel.input.fetchCountries()
         
         // Then
-        XCTAssertNil(self.viewModel.output.getCountriesEntity())
+        let filteredItem = self.viewModel.output.getCountriesEntity().filteredItems
+        XCTAssertEqual(filteredItem.count, 0)
     }
     
     /// test  list item at given index path
@@ -78,7 +79,8 @@ class CountriesListViewModelTest: MockBase {
         viewModel.input.filterCountriesList(for: "Ind")
         
         // Then
-        let count = viewModel.output.getCountriesEntity()?.filteredItems?.count
+       // let count = viewModel.output.getCountriesEntity()?.filteredItems?.count
+        let count = viewModel.output.getCountriesEntity().filteredItems.count
         XCTAssertEqual(count, 2)
     }
     
@@ -92,7 +94,8 @@ class CountriesListViewModelTest: MockBase {
         viewModel.input.filterCountriesList(for: "")
         
         // Then
-        let count = viewModel.output.getCountriesEntity()?.filteredItems?.count
+       // let count = viewModel.output.getCountriesEntity()?.filteredItems?.count
+        let count = viewModel.output.getCountriesEntity().filteredItems.count
         XCTAssertEqual(count, 3)
     }
 }

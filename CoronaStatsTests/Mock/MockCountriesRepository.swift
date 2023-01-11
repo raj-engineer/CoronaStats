@@ -15,11 +15,12 @@ class MockCountriesRepository: MockBase,CountriesRepositoryProtocol {
     var countriesData: CountriesEntity?
     
     // MARK: - Protocol Function
-    func fetchCountries(completion: @escaping (CoronaStats.CountriesEntity?, Error?) -> ()) {
+    
+    func fetchCountries(completion: @escaping CoronaStats.CountriesEntityResponse) {
         if let data = countriesData {
-            completion(data, nil)
+            completion(.success(data))
         } else {
-            completion(nil, ErrorResult.custom(string: mockErrorMessage))
+            completion(.failure(ErrorResult.custom(string: mockErrorMessage)))
         }
     }
 }

@@ -7,10 +7,10 @@
 
 import UIKit
 
-class CountryCell: UITableViewCell {
+final class CountryCell: UITableViewCell {
     
     // MARK: - IBOutlet
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
     
     // MARK: - override function
     override func awakeFromNib() {

@@ -45,7 +45,6 @@ class DetailViewModelTest: MockBase {
     func testFetchCountryDetailFail() {
         // Given
         mockUseCase.detailData = nil
-        self.viewModel = DetailsViewModel(countryName: "")
         
         // When
         self.viewModel.fetchCountryDetail()
