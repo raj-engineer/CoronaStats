@@ -7,7 +7,7 @@
 import XCTest
 @testable import CoronaStats
 
-class CountriesUseCaseTest: MockBase {
+final class CountriesUseCaseTest: MockBase {
     
     // MARK: - Properties
     var useCase: GetCountriesUseCase!
@@ -16,13 +16,13 @@ class CountriesUseCaseTest: MockBase {
     // MARK: - setup
     override func setUp() {
         super.setUp()
-        self.mockRepository = MockCountriesRepository()
-        self.useCase = GetCountriesUseCase(repository: mockRepository)
+        mockRepository = MockCountriesRepository()
+        useCase = GetCountriesUseCase(repository: mockRepository)
     }
     
     override func tearDown() {
-        self.useCase = nil
-        self.mockRepository = nil
+        useCase = nil
+        mockRepository = nil
         super.tearDown()
     }
     

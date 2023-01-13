@@ -8,22 +8,22 @@
 import XCTest
 @testable import CoronaStats
 
-class CountriesListViewModelTest: MockBase {
+final class CountriesListViewModelTest: MockBase {
     
     // MARK: - Properties
     var viewModel: CountriesListViewModel!
-    private var mockUseCase:  MockCountriesUseCase!
+    private var mockUseCase: MockCountriesUseCase!
 
     // MARK: - setup
     override func setUp() {
         super.setUp()
-        self.mockUseCase = MockCountriesUseCase()
-        self.viewModel = CountriesListViewModel(with: mockUseCase)
+        mockUseCase = MockCountriesUseCase()
+        viewModel = CountriesListViewModel(with: mockUseCase)
     }
     
     override func tearDown() {
-        self.viewModel = nil
-        self.mockUseCase = nil
+        viewModel = nil
+        mockUseCase = nil
         super.tearDown()
     }
     
@@ -35,10 +35,10 @@ class CountriesListViewModelTest: MockBase {
         mockUseCase.countriesData = mockEntity
         
         // When
-        self.viewModel.input.fetchCountries()
+        viewModel.input.fetchCountries()
         
         // Then
-        let filteredItem = self.viewModel.output.getCountriesEntity().filteredItems
+        let filteredItem = viewModel.output.getCountriesEntity().filteredItems
         XCTAssertEqual(filteredItem.count, 3)
     }
     
@@ -48,12 +48,26 @@ class CountriesListViewModelTest: MockBase {
         mockUseCase.countriesData = nil
         
         // When
-        self.viewModel.input.fetchCountries()
+        viewModel.input.fetchCountries()
         
         // Then
-        let filteredItem = self.viewModel.output.getCountriesEntity().filteredItems
+        let filteredItem = viewModel.output.getCountriesEntity().filteredItems
         XCTAssertEqual(filteredItem.count, 0)
     }
+    
+    func testFetchCountriesWhenResponseEmpty() {
+        // Given
+        mockUseCase.countriesData = mockEntity
+        mockUseCase.countriesData?.response = []
+        // When
+        viewModel.input.fetchCountries()
+        
+        // Then
+        let filteredItem = viewModel.output.getCountriesEntity().filteredItems
+        XCTAssertTrue(filteredItem.isEmpty)
+        XCTAssertEqual(viewModel.error.value, Errors.NoData.rawValue)
+    }
+    
     
     /// test  list item at given index path
     func testGetItem(){
@@ -79,7 +93,6 @@ class CountriesListViewModelTest: MockBase {
         viewModel.input.filterCountriesList(for: "Ind")
         
         // Then
-       // let count = viewModel.output.getCountriesEntity()?.filteredItems?.count
         let count = viewModel.output.getCountriesEntity().filteredItems.count
         XCTAssertEqual(count, 2)
     }
@@ -94,7 +107,6 @@ class CountriesListViewModelTest: MockBase {
         viewModel.input.filterCountriesList(for: "")
         
         // Then
-       // let count = viewModel.output.getCountriesEntity()?.filteredItems?.count
         let count = viewModel.output.getCountriesEntity().filteredItems.count
         XCTAssertEqual(count, 3)
     }

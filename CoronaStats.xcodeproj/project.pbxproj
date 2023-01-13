@@ -30,6 +30,13 @@
 		3E0E9E38296C286C00098B2D /* MockBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E9E37296C286C00098B2D /* MockBase.swift */; };
 		3E0E9E3A296C2B5300098B2D /* DetailUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E9E39296C2B5300098B2D /* DetailUseCaseTest.swift */; };
 		3E0E9E3C296C2BAD00098B2D /* MockDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E9E3B296C2BAD00098B2D /* MockDetailRepository.swift */; };
+		3E745B0729717F02008156AA /* CountriesServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E745B0629717F02008156AA /* CountriesServiceTest.swift */; };
+		3E745B0A29717FCB008156AA /* CountriesRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E745B0929717FCB008156AA /* CountriesRepositoryTest.swift */; };
+		3E745B0C29718091008156AA /* MockCountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E745B0B29718091008156AA /* MockCountriesService.swift */; };
+		3E745B0E2971A285008156AA /* DetailRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E745B0D2971A285008156AA /* DetailRepositoryTest.swift */; };
+		3E745B102971A320008156AA /* MockDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E745B0F2971A320008156AA /* MockDetailService.swift */; };
+		3E745B122971B44F008156AA /* DetailServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E745B112971B44F008156AA /* DetailServiceTest.swift */; };
+		3E745B142971B58A008156AA /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E745B132971B58A008156AA /* MockNetworkService.swift */; };
 		3E8F734A2968595900524581 /* CountriesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F73492968595900524581 /* CountriesEntity.swift */; };
 		3E957429293B543D00786A43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E957428293B543D00786A43 /* AppDelegate.swift */; };
 		3E95742B293B543D00786A43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E95742A293B543D00786A43 /* SceneDelegate.swift */; };
@@ -102,6 +109,13 @@
 		3E0E9E37296C286C00098B2D /* MockBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBase.swift; sourceTree = "<group>"; };
 		3E0E9E39296C2B5300098B2D /* DetailUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUseCaseTest.swift; sourceTree = "<group>"; };
 		3E0E9E3B296C2BAD00098B2D /* MockDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailRepository.swift; sourceTree = "<group>"; };
+		3E745B0629717F02008156AA /* CountriesServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesServiceTest.swift; sourceTree = "<group>"; };
+		3E745B0929717FCB008156AA /* CountriesRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRepositoryTest.swift; sourceTree = "<group>"; };
+		3E745B0B29718091008156AA /* MockCountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCountriesService.swift; sourceTree = "<group>"; };
+		3E745B0D2971A285008156AA /* DetailRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRepositoryTest.swift; sourceTree = "<group>"; };
+		3E745B0F2971A320008156AA /* MockDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailService.swift; sourceTree = "<group>"; };
+		3E745B112971B44F008156AA /* DetailServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailServiceTest.swift; sourceTree = "<group>"; };
+		3E745B132971B58A008156AA /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		3E8F73492968595900524581 /* CountriesEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesEntity.swift; sourceTree = "<group>"; };
 		3E957425293B543D00786A43 /* CoronaStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoronaStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E957428293B543D00786A43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +192,24 @@
 				3E0E9E39296C2B5300098B2D /* DetailUseCaseTest.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		3E745B0529717B76008156AA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3E745B0629717F02008156AA /* CountriesServiceTest.swift */,
+				3E745B112971B44F008156AA /* DetailServiceTest.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3E745B0829717FA5008156AA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				3E745B0929717FCB008156AA /* CountriesRepositoryTest.swift */,
+				3E745B0D2971A285008156AA /* DetailRepositoryTest.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		3E8F733E2968038000524581 /* Domain */ = {
@@ -313,8 +345,10 @@
 		3E95743E293B543E00786A43 /* CoronaStatsTests */ = {
 			isa = PBXGroup;
 			children = (
-				3E0E9E2D296C0FBC00098B2D /* UseCases */,
 				3E95749B293E20BF00786A43 /* ViewModel */,
+				3E0E9E2D296C0FBC00098B2D /* UseCases */,
+				3E745B0829717FA5008156AA /* Repositories */,
+				3E745B0529717B76008156AA /* Service */,
 				3E95748E293DD74000786A43 /* Mock */,
 			);
 			path = CoronaStatsTests;
@@ -399,6 +433,9 @@
 				3E0E9E30296C10EF00098B2D /* MockCountriesRepository.swift */,
 				3E0E9E37296C286C00098B2D /* MockBase.swift */,
 				3E0E9E3B296C2BAD00098B2D /* MockDetailRepository.swift */,
+				3E745B0B29718091008156AA /* MockCountriesService.swift */,
+				3E745B0F2971A320008156AA /* MockDetailService.swift */,
+				3E745B132971B58A008156AA /* MockNetworkService.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -683,12 +720,19 @@
 				3E0E9E31296C10EF00098B2D /* MockCountriesRepository.swift in Sources */,
 				3E0E9E28296BD7DE00098B2D /* MockDetailUseCase.swift in Sources */,
 				3E0E9E3C296C2BAD00098B2D /* MockDetailRepository.swift in Sources */,
+				3E745B0A29717FCB008156AA /* CountriesRepositoryTest.swift in Sources */,
 				3E0E9E2A296BDF5F00098B2D /* CountriesListViewModelTest.swift in Sources */,
 				3E0E9E2C296BDF8A00098B2D /* MockCountriesUseCase.swift in Sources */,
 				3E0E9E2F296C100000098B2D /* CountriesUseCaseTest.swift in Sources */,
 				3E0E9E38296C286C00098B2D /* MockBase.swift in Sources */,
+				3E745B142971B58A008156AA /* MockNetworkService.swift in Sources */,
+				3E745B0C29718091008156AA /* MockCountriesService.swift in Sources */,
 				3E0E9E3A296C2B5300098B2D /* DetailUseCaseTest.swift in Sources */,
+				3E745B0729717F02008156AA /* CountriesServiceTest.swift in Sources */,
 				3E0E9E26296BD71700098B2D /* DetailsViewModelTest.swift in Sources */,
+				3E745B122971B44F008156AA /* DetailServiceTest.swift in Sources */,
+				3E745B102971A320008156AA /* MockDetailService.swift in Sources */,
+				3E745B0E2971A285008156AA /* DetailRepositoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

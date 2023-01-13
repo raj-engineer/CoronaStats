@@ -16,7 +16,7 @@ final class CountryCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Remove cell highlight/selection color
-        self.selectionStyle = .none
+        selectionStyle = .none
     }
     
     func configure(_ title: String?) {

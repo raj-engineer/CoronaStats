@@ -5,8 +5,6 @@
 //  Created by Rajesh Rajesh on 08/01/23.
 //
 
-import Foundation
-
 // MARK: - Protocol
 protocol GetDetailUseCaseProtocol : AnyObject {
     func fetchCountryDetail(searchText: String, completion: @escaping DetailEntityResponse)
@@ -25,6 +23,6 @@ final class GetDetailUseCase: GetDetailUseCaseProtocol {
     
     // MARK: - function
     func fetchCountryDetail(searchText: String, completion: @escaping DetailEntityResponse) {
-        self.repository.fetchCountryDetail(searchText: searchText, completion: completion)
+        repository.fetchCountryDetail(searchText: searchText, completion: completion)
     }
 }

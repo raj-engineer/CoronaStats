@@ -6,10 +6,9 @@
 //
 
 
-import Foundation
 @testable import CoronaStats
 
-class MockCountriesRepository: MockBase,CountriesRepositoryProtocol {
+final class MockCountriesRepository: MockBase,CountriesRepositoryProtocol {
     
     // MARK: - Properties
     var countriesData: CountriesEntity?

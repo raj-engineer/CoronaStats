@@ -5,8 +5,6 @@
 //  Created by Rajesh Rajesh on 11/01/23.
 //
 
-import Foundation
-
 enum NetworkError: Error {
     case invalidRequest
     case badRequest

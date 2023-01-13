@@ -29,7 +29,7 @@ final class CountriesListViewModel: CountriesListViewModelProtocol {
     func fetchCountries() {
         /// bind data to show Activity indicator
         loaderStatus.value = true
-        self.getCountriesUseCase.fetchCountries { [weak self] result in
+        getCountriesUseCase.fetchCountries { [weak self] result in
             self?.loaderStatus.value = false
             switch result {
             case .success(let countriesEntity):
@@ -52,13 +52,12 @@ final class CountriesListViewModel: CountriesListViewModelProtocol {
     
     // MARK: - Ouput function
     func numberOfSection() -> Int {
-       // return  self.countriesEntity?.filteredItems?.count ?? 0
-        return self.countriesEntity.filteredItems.count
+        return countriesEntity.filteredItems.count
     }
     
     func getItem(at indexPath: IndexPath) -> String {
-        guard !(self.countriesEntity.filteredItems.isEmpty) else { return "" }
-        let countryName = self.countriesEntity.filteredItems[indexPath.row]
+        guard !(countriesEntity.filteredItems.isEmpty) else { return "" }
+        let countryName = countriesEntity.filteredItems[indexPath.row]
         return countryName
     }
     

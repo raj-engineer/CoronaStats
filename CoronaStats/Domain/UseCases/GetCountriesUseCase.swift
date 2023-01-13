@@ -5,8 +5,6 @@
 //  Created by Rajesh Rajesh on 06/01/23.
 //
 
-import Foundation
-
 // MARK: - Protocol
 protocol GetCountriesUseCaseProtocol : AnyObject {
     func fetchCountries(completion: @escaping CountriesEntityResponse)
@@ -25,7 +23,7 @@ final class GetCountriesUseCase: GetCountriesUseCaseProtocol {
     
     // MARK: - function
     func fetchCountries(completion: @escaping CountriesEntityResponse) {
-        self.repository.fetchCountries(completion: completion)
+        repository.fetchCountries(completion: completion)
     }
 }
 

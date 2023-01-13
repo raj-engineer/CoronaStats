@@ -5,8 +5,6 @@
 //  Created by Rajesh Rajesh on 03/12/22.
 //
 
-import Foundation
-
 // MARK: - Url
 enum UrlEnum {
     // Host

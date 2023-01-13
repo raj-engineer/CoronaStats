@@ -5,8 +5,6 @@
 //  Created by Rajesh Rajesh on 08/01/23.
 //
 
-import Foundation
-
 final class DetailsViewModel : DetailsViewModelProtocol {
     // MARK: - Properties
     var input: DetailViewModelInput { return self }
@@ -21,7 +19,7 @@ final class DetailsViewModel : DetailsViewModelProtocol {
     
     // MARK: - initializer
     init(with useCase: GetDetailUseCaseProtocol = GetDetailUseCase(), countryName: String) {
-        self.getDetailUseCase = useCase
+        getDetailUseCase = useCase
         self.countryName = countryName
     }
     
@@ -30,7 +28,7 @@ final class DetailsViewModel : DetailsViewModelProtocol {
         /// bind data to show Activity indicator
         loaderStatus.value = true
         
-        self.getDetailUseCase.fetchCountryDetail(searchText: countryName) {[weak self] result in
+        getDetailUseCase.fetchCountryDetail(searchText: countryName) {[weak self] result in
             /// Bind data
             self?.loaderStatus.value = false
             switch result {

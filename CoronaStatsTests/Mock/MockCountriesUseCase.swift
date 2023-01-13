@@ -5,10 +5,9 @@
 //  Created by Rajesh Rajesh on 09/01/23.
 //
 
-import Foundation
 @testable import CoronaStats
 
-class MockCountriesUseCase: MockBase, GetCountriesUseCaseProtocol {
+final class MockCountriesUseCase: MockBase, GetCountriesUseCaseProtocol {
     // MARK: - Properties
     var countriesData: CountriesEntity?
     

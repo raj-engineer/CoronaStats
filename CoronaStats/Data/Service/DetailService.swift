@@ -5,8 +5,6 @@
 //  Created by Rajesh Rajesh on 11/01/23.
 //
 
-import Foundation
-
 // MARK: - Protocol
 protocol DetailServiceProtocol: AnyObject {
     func fetchCountryDetail(searchText: String,completion: @escaping (Result<Detail, Error>) -> ())
@@ -26,7 +24,7 @@ final class DetailService: DetailServiceProtocol {
     // MARK: - Protocol Function
     func fetchCountryDetail(searchText: String, completion: @escaping (Result<Detail, Error>) -> ()) {
         let networkConfig = NetworkConfig(path: UrlEnum.statistics, method: .get, queryParameters: [UrlEnum.queryKey: searchText])
-        self.networkService.execute(networkConfig: networkConfig, completion: completion)
+        networkService.execute(networkConfig: networkConfig, completion: completion)
     }
 }
 

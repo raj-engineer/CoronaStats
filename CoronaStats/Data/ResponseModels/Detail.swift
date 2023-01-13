@@ -5,8 +5,6 @@
 //  Created by Rajesh Rajesh on 04/12/22.
 //
 
-import Foundation
-
 // MARK: - Detail
 struct Detail: Decodable {
     var get: String?

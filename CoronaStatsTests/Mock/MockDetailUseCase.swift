@@ -5,10 +5,9 @@
 //  Created by Rajesh Rajesh on 09/01/23.
 //
 
-import Foundation
 @testable import CoronaStats
 
-class MockDetailUseCase: MockBase, GetDetailUseCaseProtocol {
+final class MockDetailUseCase: MockBase, GetDetailUseCaseProtocol {
     
     // MARK: - Properties
     var detailData: DetailEntity?

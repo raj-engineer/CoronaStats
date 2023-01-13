@@ -4,8 +4,6 @@
 //
 //  Created by Rajesh Rajesh on 08/01/23.
 //
-
-import Foundation
 import UIKit
 
 final class CountriesListViewController: UIViewController {
@@ -22,12 +20,12 @@ final class CountriesListViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // set title
-        self.title = ScreenTitle.Countries
+        title = ScreenTitle.Countries
         setupTableView()
         setupCountriesViewModelObserver()
         setupSearchBar()
         // fetch countries data
-        self.countriesViewModel.fetchCountries()
+        countriesViewModel.fetchCountries()
     }
     
     // MARK: - Private Functions
@@ -74,7 +72,7 @@ final class CountriesListViewController: UIViewController {
             // Code in this block will trigger when OK button tapped.
         }
         alertController.addAction(OKAction)
-        self.present(alertController, animated: true, completion:nil)
+        present(alertController, animated: true, completion:nil)
     }
 }
 
@@ -101,9 +99,9 @@ extension CountriesListViewController: UITableViewDelegate {
         guard let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController else {
             return
         }
-        let country = self.countriesViewModel.getItem(at: indexPath)
+        let country = countriesViewModel.getItem(at: indexPath)
         detailViewController.configure(viewModel: DetailsViewModel(countryName: country))
-        self.navigationController?.pushViewController(detailViewController,animated:true)
+        navigationController?.pushViewController(detailViewController,animated:true)
     }
 }
 

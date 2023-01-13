@@ -5,8 +5,6 @@
 //  Created by Rajesh Rajesh on 08/01/23.
 //
 
-import Foundation
-
 typealias DetailEntityResponse = (Result<DetailEntity, Error>) -> Void
 
 protocol DetailRepositoryProtocol : AnyObject {

@@ -5,8 +5,6 @@
 //  Created by Rajesh Rajesh on 07/01/23.
 //
 
-import Foundation
-
 final class CountriesRepository: CountriesRepositoryProtocol {
     // MARK: - Private Properties
     private let service: CountriesServiceProtocol
@@ -18,7 +16,7 @@ final class CountriesRepository: CountriesRepositoryProtocol {
     
     // MARK: - function
     func fetchCountries(completion: @escaping CountriesEntityResponse) {
-        self.service.fetchCountries { (result:Result<Countries, Error>) in
+        service.fetchCountries { (result:Result<Countries, Error>) in
             switch result {
             case .success(let countries):
                 let countriesEntity = CountriesMapper().getCountriesEntity(responseModel: countries)

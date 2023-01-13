@@ -5,7 +5,6 @@
 //  Created by Rajesh Rajesh on 08/01/23.
 //
 
-import Foundation
 import UIKit
 
 final class DetailsViewController: UIViewController {
@@ -34,11 +33,11 @@ final class DetailsViewController: UIViewController {
         setupDetailViewModelObserver()
         
         // fetch countries data
-        self.detailViewModel.fetchCountryDetail()
+        detailViewModel.fetchCountryDetail()
     }
     
     func configure(viewModel: DetailsViewModel) {
-        self.detailViewModel = viewModel
+        detailViewModel = viewModel
     }
     
     // MARK: - Private Functions
@@ -57,19 +56,19 @@ final class DetailsViewController: UIViewController {
     }
     
     private func setUIData() {
-        guard let detailEntity = self.detailViewModel.getDetailEntity() else {return}
+        guard let detailEntity = detailViewModel.getDetailEntity() else {return}
         countConfirmedLabel.text = detailEntity.confirmed
         countRecoveredLabel.text = detailEntity.recovered
         countDeceasedLabel.text = detailEntity.deceased
     }
     
     private func setNavigationBarUIData() {
-        self.title = self.detailViewModel.countryName
-        self.navigationController?.navigationBar.titleTextAttributes =  [NSAttributedString.Key.foregroundColor:UIColor.customGrey]
+        title = detailViewModel.countryName
+        navigationController?.navigationBar.titleTextAttributes =  [NSAttributedString.Key.foregroundColor:UIColor.customGrey]
     }
     
     private func setUIStyle() {
-        self.view.backgroundColor = UIColor.background
+        view.backgroundColor = UIColor.background
         confirmedCaseLabel.textColor = UIColor.customGrey
         deceasedCaseLabel.textColor = UIColor.customGrey
         recoveredCaseLabel.textColor = UIColor.customGrey

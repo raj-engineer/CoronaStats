@@ -5,7 +5,6 @@
 //  Created by Rajesh Rajesh on 03/12/22.
 //
 
-import Foundation
 
 class Dynamic<T> {
     typealias Listener = (T) -> Void
@@ -13,11 +12,6 @@ class Dynamic<T> {
     
     func bind(_ listener: Listener?) {
         self.listener = listener
-    }
-    
-    func bindAndFire(_ listener: Listener?) {
-        self.listener = listener
-        listener?(value)
     }
     
     var value: T {

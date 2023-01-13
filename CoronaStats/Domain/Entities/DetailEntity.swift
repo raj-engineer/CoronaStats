@@ -5,8 +5,6 @@
 //  Created by Rajesh Rajesh on 08/01/23.
 //
 
-import Foundation
-
 // MARK: - struct
 struct DetailEntity {
     

@@ -7,7 +7,6 @@
 // URLRequestGenerator
 import Foundation
 
-
 protocol NeworkRequestProtocol {
     func createURLRequest(with networkConfig: NetworkConfigurable) throws -> URLRequest
 }

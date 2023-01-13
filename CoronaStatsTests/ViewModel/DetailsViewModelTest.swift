@@ -9,22 +9,22 @@
 import XCTest
 @testable import CoronaStats
 
-class DetailViewModelTest: MockBase {
+final class DetailViewModelTest: MockBase {
     
     // MARK: - Properties
     var viewModel: DetailsViewModel!
-    private var mockUseCase:  MockDetailUseCase!
+    private var mockUseCase: MockDetailUseCase!
     
     // MARK: - setup
     override func setUp() {
         super.setUp()
-        self.mockUseCase = MockDetailUseCase()
-        self.viewModel = DetailsViewModel(with: mockUseCase, countryName: mockCountry)
+        mockUseCase = MockDetailUseCase()
+        viewModel = DetailsViewModel(with: mockUseCase, countryName: mockCountry)
     }
     
     override func tearDown() {
-        self.viewModel = nil
-        self.mockUseCase = nil
+        viewModel = nil
+        mockUseCase = nil
         super.tearDown()
     }
     
@@ -35,10 +35,10 @@ class DetailViewModelTest: MockBase {
         mockUseCase.detailData = mockDetailEntity
         
         // When
-        self.viewModel.input.fetchCountryDetail()
+        viewModel.input.fetchCountryDetail()
         
         // Then
-        XCTAssertNotNil(self.viewModel.output.getDetailEntity())
+        XCTAssertNotNil(viewModel.output.getDetailEntity())
     }
     
     /// test  fetchCountryDetail  failure case
@@ -47,10 +47,10 @@ class DetailViewModelTest: MockBase {
         mockUseCase.detailData = nil
         
         // When
-        self.viewModel.fetchCountryDetail()
+        viewModel.fetchCountryDetail()
         
         // Then
-        XCTAssertNil(self.viewModel.output.getDetailEntity())
+        XCTAssertNil(viewModel.output.getDetailEntity())
     }
     
     /// test  getDetailEntity  sucess case if have data
@@ -60,7 +60,7 @@ class DetailViewModelTest: MockBase {
         self.viewModel.fetchCountryDetail()
         
         // When
-        let model = self.viewModel.getDetailEntity()
+        let model = viewModel.output.getDetailEntity()
         
         // Then
         XCTAssertNotNil(model)
@@ -74,7 +74,7 @@ class DetailViewModelTest: MockBase {
         // Given - By default- nil
         
         // When
-        let model = self.viewModel.output.getDetailEntity()
+        let model = viewModel.output.getDetailEntity()
         
         // Then
         XCTAssertNil(model)
