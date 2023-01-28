@@ -10,7 +10,7 @@ import XCTest
 final class CountriesUseCaseTest: MockBase {
     
     // MARK: - Properties
-    var useCase: GetCountriesUseCase!
+    var useCase: GetCountriesUseCaseProtocol!
     private var mockRepository:  MockCountriesRepository!
     
     // MARK: - setup

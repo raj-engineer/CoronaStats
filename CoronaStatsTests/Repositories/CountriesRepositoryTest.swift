@@ -11,7 +11,7 @@ import XCTest
 final class CountriesRepositoryTest: MockBase {
     
     // MARK: - Properties
-    var repository: CountriesRepository!
+    var repository: CountriesRepositoryProtocol!
     private var mockService:  MockCountriesService!
     
     // MARK: - setup

@@ -11,7 +11,7 @@ import XCTest
 final class DetailServiceTest: MockBase {
     
     // MARK: - Properties
-    var service: DetailService!
+    var service: DetailServiceProtocol!
     private var mockNetworkService:  MockNetworkService!
     
     // MARK: - setup

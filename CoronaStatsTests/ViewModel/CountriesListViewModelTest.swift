@@ -11,7 +11,7 @@ import XCTest
 final class CountriesListViewModelTest: MockBase {
     
     // MARK: - Properties
-    var viewModel: CountriesListViewModel!
+    var viewModel: CountriesListViewModelProtocol!
     private var mockUseCase: MockCountriesUseCase!
 
     // MARK: - setup

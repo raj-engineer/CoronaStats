@@ -11,7 +11,7 @@ import XCTest
 final class DetailRepositoryTest: MockBase {
     
     // MARK: - Properties
-    var repository: DetailRepository!
+    var repository: DetailRepositoryProtocol!
     private var mockService:  MockDetailService!
     
     // MARK: - setup
